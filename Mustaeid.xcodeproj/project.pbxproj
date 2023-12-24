@@ -15,6 +15,8 @@
 		5F548B0E2B347500008D5D47 /* MustaeidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F548B0D2B347500008D5D47 /* MustaeidTests.swift */; };
 		5F548B182B347500008D5D47 /* MustaeidUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F548B172B347500008D5D47 /* MustaeidUITests.swift */; };
 		5F548B1A2B347500008D5D47 /* MustaeidUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F548B192B347500008D5D47 /* MustaeidUITestsLaunchTests.swift */; };
+		5F548B272B373599008D5D47 /* OverviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F548B262B373599008D5D47 /* OverviewPage.swift */; };
+		5F548B2D2B382D85008D5D47 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F548B2C2B382D85008D5D47 /* Demo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		5F548B132B347500008D5D47 /* MustaeidUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MustaeidUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F548B172B347500008D5D47 /* MustaeidUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MustaeidUITests.swift; sourceTree = "<group>"; };
 		5F548B192B347500008D5D47 /* MustaeidUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MustaeidUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5F548B262B373599008D5D47 /* OverviewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewPage.swift; sourceTree = "<group>"; };
+		5F548B2C2B382D85008D5D47 /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				5F548AFA2B3474FF008D5D47 /* MustaeidApp.swift */,
 				5F548AFC2B3474FF008D5D47 /* ContentView.swift */,
 				5F548AFE2B3474FF008D5D47 /* Item.swift */,
+				5F548B262B373599008D5D47 /* OverviewPage.swift */,
+				5F548B2C2B382D85008D5D47 /* Demo.swift */,
 				5F548B002B347500008D5D47 /* Assets.xcassets */,
 				5F548B022B347500008D5D47 /* Preview Content */,
 			);
@@ -261,6 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F548AFD2B3474FF008D5D47 /* ContentView.swift in Sources */,
+				5F548B2D2B382D85008D5D47 /* Demo.swift in Sources */,
+				5F548B272B373599008D5D47 /* OverviewPage.swift in Sources */,
 				5F548AFF2B3474FF008D5D47 /* Item.swift in Sources */,
 				5F548AFB2B3474FF008D5D47 /* MustaeidApp.swift in Sources */,
 			);
