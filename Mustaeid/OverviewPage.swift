@@ -6,113 +6,120 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct OverviewPage: View {
-    
+    @State var showSheet = false
+    @State private var showTip = true
     @State private var progressValue: Float = 0.0
     @State private var progressValue2: Float = 0.0
-        
-        @State private var habits = [
-            Habit(title: "Sleeping", symbol: "bed.double.fill", backC: Color.muteGreen),
-            Habit(title: "Studying", symbol: "studentdesk", backC: Color.muteBlue)
-        ]
-        
-        var body: some View {
-            Spacer(minLength: 20)
-            NavigationView{
+    
+    @State private var habits = [
+        Habit(title: "Sleeping", symbol: "bed.double.fill", backC: Color.muteGreen),
+        Habit(title: "Studying", symbol: "studentdesk", backC: Color.muteBlue)
+    ]
+    
+    var body: some View {
+        Spacer(minLength: 20)
+        NavigationView{
+            VStack {
+                Text("Build Your Habits, Shape \nYour Future!")
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 20)
+                
                 VStack {
-                    Text("Build Your Habits, Shape \nYour Future!")
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 20)
-                    
-                    VStack {
-                        ProgressBar(progress: self.$progressValue)
-                            .foregroundColor(.muteGreen).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-                            .frame(width: 200.0, height: 200.0)
-                            .padding(20.0)
-                            .onAppear {
-                                self.progressValue = 0.0
-                            }
-                            .overlay(
-                                ProgressBar(progress: self.$progressValue2, color: .muteBlue)
-                                    .foregroundColor(.muteBlue).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-                                    .frame(width: 150.0, height: 150.0)
-                                    .padding(20.0)
-                                    .onAppear {
-                                        self.progressValue2 = 0.0
-                                    }
-                            )
-                            .overlay(
-                                VStack(spacing: 5) {
-                                    Text("\(Int((progressValue + progressValue2) / 2 * 100))%")
-                                        .font(.system(size: 25))
-                                        .bold()
-                                    
-                                    Text("Overall Progress")
-                                        .font(.system(size: 12))
+                    ProgressBar(progress: self.$progressValue)
+                        .foregroundColor(.muteGreen).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                        .frame(width: 200.0, height: 200.0)
+                        .padding(20.0)
+                        .onAppear {
+                            self.progressValue = 0.0
+                        }
+                        .overlay(
+                            ProgressBar(progress: self.$progressValue2, color: .muteBlue)
+                                .foregroundColor(.muteBlue).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                                .frame(width: 150.0, height: 150.0)
+                                .padding(20.0)
+                                .onAppear {
+                                    self.progressValue2 = 0.0
                                 }
-                            )
-                    }
-                    HStack(alignment: .top, spacing: 16) {
-                        HStack(alignment: .center, spacing: 8) {
-                            Rectangle()
-                              .foregroundColor(.clear)
-                              .frame(width: 7, height: 7)
-                              .background(Color.muteGreen)
-                            
-                            Text("\(Int((progressValue) * 30)) of 30 days of good sleep")                              .font(
-                                Font.custom("SF Pro Rounded", size: 11)
-                                  .weight(.medium)
-                              )
-                              .foregroundColor(Color.muteGreen)
-                            
-                        }
-                        .padding(0)
-                        
-                        HStack(alignment: .center, spacing: 8) {
-                            Rectangle()
-                              .foregroundColor(.clear)
-                              .frame(width: 7, height: 7)
-                              .background(Color.muteBlue)
-                            Text("\(Int((progressValue2) * 30)) of 30 days of good sleep")
-                              .font(
-                                Font.custom("SF Pro Rounded", size: 11)
-                                  .weight(.medium)
-                              )
-                              .foregroundColor(Color.muteBlue)
-                            
-                        }
-                        .padding(0)
-
-                    }
-                    .padding(0).frame(height: 50)
-                    
-                    VStack(spacing: -10){
-                        HStack(alignment: .top, spacing: 240){
-                            Text("All Habits")
-                                .bold()
-                            Button(action: {
-                            }) {
-                                Image(systemName: "plus.square")
-                                    .foregroundColor(Color.darkGreen)
+                        )
+                        .overlay(
+                            VStack(spacing: 5) {
+                                Text("\(Int((progressValue + progressValue2) / 2 * 100))%")
+                                    .font(.system(size: 25))
                                     .bold()
+                                
+                                Text("Overall Progress")
+                                    .font(.system(size: 12))
                             }
-                            
-                        }
-                            
-                        ForEach(habits) { habit in
-                            CardView(habit: habit, progressValue: $progressValue, progressValue2: $progressValue2)
+                        )
+                }
+                HStack(alignment: .top, spacing: 16) {
+                    HStack(alignment: .center, spacing: 8) {
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 7, height: 7)
+                            .background(Color.muteGreen)
+                        
+                        Text("\(Int((progressValue) * 30)) / 30 days of good sleep")
+                            .font(.system(size: 12))
+                            .foregroundColor(Color.muteGreen)
+                            .bold()
+                        
+                    }
+                    .padding(0)
+                    
+                    HStack(alignment: .center, spacing: 8) {
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 7, height: 7)
+                            .background(Color.muteBlue)
+                        Text("\(Int((progressValue2) * 30)) / 30 days of good study")
+                            .font(.system(size: 12))                          .foregroundColor(Color.muteBlue)
+                            .bold()
+                        
+                    }
+                    .padding(0)
+                    
+                }
+                .padding(0).frame(height: 50)
+                
+                VStack(spacing: -5){
+                    HStack(alignment: .top, spacing: 240){
+                        Text("All Habits")
+                            .bold()
+                        Button(action: {
+                        }) {
+                            Image(systemName: "plus.square")
+                                .foregroundColor(Color.darkGreen)
+                                .bold()
                         }
                         
-                        Spacer()
                     }
-                }.navigationTitle("Overview")
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarTitle(Text("Overview").font(.largeTitle).fontWeight(.bold))
-            }
+                    
+                    ForEach(habits) { habit in
+                        CardView(habits: $habits, habit: habit, progressValue: $progressValue, progressValue2: $progressValue2)
+                    }
+                    
+                    Spacer()
+                }
+            }.navigationTitle("Overview")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarTitle(Text("Overview").font(.largeTitle).fontWeight(.bold))
+                .overlay(
+                    Group {
+                        if showTip {
+                            TipView(title: "Tip", message: "Swipe the habit to the right to check it for the day!")
+                                .onTapGesture {
+                                    showTip = false
+                                }
+                        }
+                    }
+                )
         }
     }
-
+}
     struct ProgressBar: View {
         @Binding var progress: Float
         var color: Color = .muteGreen
@@ -141,6 +148,7 @@ struct OverviewPage: View {
     }
 
 struct CardView: View {
+    @Binding var habits: [Habit]
     @State private var showPlusButton = false
     @State private var showMinusButton = false
 
@@ -176,14 +184,16 @@ struct CardView: View {
                         if progressValue > 0.0 {
                             self.progressValue -= 1.0 / 30.0
                         } else {
-                            // Delete the card
+                            
+                            habits.remove(at: 0)
+                            
                             
                         }
                     } else if habit.title == "Studying" {
                         if progressValue2 > 0.0 {
                             self.progressValue2 -= 1.0 / 30.0
                         } else {
-                            // Delete the card
+                            habits.remove(at: 0)
                             
                         }
                     }
@@ -273,7 +283,33 @@ struct CardView: View {
     }
             
 }
-
+struct TipView: View {
+    let title: String
+    let message: String
+    
+    var body: some View {
+        VStack(spacing: 8) {
+            Text(title)
+                .font(.title)
+                .foregroundColor(.white)
+                .padding(.top, 1)
+            Text(message)
+                .font(.subheadline)
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 16)
+        }
+        
+        .padding()
+        .background(LinearGradient(
+            gradient: Gradient(colors: [Color.darkGreen, Color.darkGreen, Color.darkGreen, Color.muteGreen, Color.lightMuteGreen]),
+            startPoint: .top,
+            endPoint: .bottom
+        ))
+        .cornerRadius(10)
+        .padding(50)
+    }
+}
 #Preview {
     OverviewPage()
 }
