@@ -25,7 +25,7 @@ struct MustaeidApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            bottomSheet()
         }
         .modelContainer(sharedModelContainer)
     }

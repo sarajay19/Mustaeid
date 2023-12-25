@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		242663202B384DCA001EDDE1 /* bottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2426631F2B384DCA001EDDE1 /* bottomSheet.swift */; };
 		5F548AFB2B3474FF008D5D47 /* MustaeidApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F548AFA2B3474FF008D5D47 /* MustaeidApp.swift */; };
 		5F548AFD2B3474FF008D5D47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F548AFC2B3474FF008D5D47 /* ContentView.swift */; };
 		5F548AFF2B3474FF008D5D47 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F548AFE2B3474FF008D5D47 /* Item.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2426631F2B384DCA001EDDE1 /* bottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottomSheet.swift; sourceTree = "<group>"; };
 		5F548AF72B3474FF008D5D47 /* Mustaeid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mustaeid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F548AFA2B3474FF008D5D47 /* MustaeidApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MustaeidApp.swift; sourceTree = "<group>"; };
 		5F548AFC2B3474FF008D5D47 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				5F548AFA2B3474FF008D5D47 /* MustaeidApp.swift */,
 				5F548AFC2B3474FF008D5D47 /* ContentView.swift */,
 				5F548AFE2B3474FF008D5D47 /* Item.swift */,
+				2426631F2B384DCA001EDDE1 /* bottomSheet.swift */,
 				5F548B002B347500008D5D47 /* Assets.xcassets */,
 				5F548B022B347500008D5D47 /* Preview Content */,
 			);
@@ -262,6 +265,7 @@
 			files = (
 				5F548AFD2B3474FF008D5D47 /* ContentView.swift in Sources */,
 				5F548AFF2B3474FF008D5D47 /* Item.swift in Sources */,
+				242663202B384DCA001EDDE1 /* bottomSheet.swift in Sources */,
 				5F548AFB2B3474FF008D5D47 /* MustaeidApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
